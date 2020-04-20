@@ -7,7 +7,7 @@ tags: [general,hello world]
 ---
 
 This is shubham. <br>
-I created this Blog to write something that i would found helpful.<br>
+I created this Blog to write something that I can easily find and refer to later.<br>
 <br><br>
 
 > If you really want to understand something, the best way is to try and explain
