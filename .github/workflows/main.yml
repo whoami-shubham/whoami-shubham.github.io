@@ -1,0 +1,45 @@
+name: hugo CI
+
+on:
+  push:
+    branches: [ code ]
+
+jobs:
+  deploy:
+    environment: github-pages
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Clone theme
+        # If you have the theme added as submodule, you can pull it and use the most updated version
+        run: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+        
+      - name: Update theme
+        run: git submodule update --init --recursive
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.87.0"
+
+      - name: Build
+        # remove --minify tag if you do not need it
+        # docs: https://gohugo.io/hugo-pipes/minification/
+        run: hugo --minify
+        
+      - name: Log
+        run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Log2
+        run: echo " ${{ github.ref }} "
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.TOKEN }}
+          external_repository: whoami-shubham/whoami-github.io
+          publish_dir: ./public
+          publish_branch: master
+          force_orphan: true
+        #   cname: example.com
