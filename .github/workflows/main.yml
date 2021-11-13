@@ -6,7 +6,6 @@ on:
 
 jobs:
   deploy:
-    environment: github-pages
     runs-on: ubuntu-18.04
     steps:
       - name: Git checkout
