@@ -37,7 +37,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.TOKEN }}
-          external_repository: whoami-shubham/whoami-github.io
+          external_repository: whoami-shubham/whoami-shubham.github.io
           publish_dir: ./public
           publish_branch: master
           force_orphan: true
