@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://whoami-shubham.github.io/sitemap.xml

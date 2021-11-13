@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>algorithm on shubham&#39;s Blog</title>
+    <link>https://whoami-shubham.github.io/tags/algorithm/</link>
+    <description>Recent content in algorithm on shubham&#39;s Blog</description>
+    <image>
+      <url>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Nov 2018 04:18:45 +0000</lastBuildDate><atom:link href="https://whoami-shubham.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Compare Two Algorithms</title>
+      <link>https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/</link>
+      <pubDate>Sat, 17 Nov 2018 04:18:45 +0000</pubDate>
+      
+      <guid>https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/</guid>
+      <description>Let&amp;rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let&amp;rsquo;s assume Alice and Bob took a programming course this semester and john didn&amp;rsquo;t. john  went to hangout with alice and bob</description>
+    </item>
+    
+  </channel>
+</rss>

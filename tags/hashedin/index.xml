@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hashedin on shubham&#39;s Blog</title>
+    <link>https://whoami-shubham.github.io/tags/hashedin/</link>
+    <description>Recent content in Hashedin on shubham&#39;s Blog</description>
+    <image>
+      <url>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 13 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://whoami-shubham.github.io/tags/hashedin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hashedin University</title>
+      <link>https://whoami-shubham.github.io/posts/hashedin-university/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://whoami-shubham.github.io/posts/hashedin-university/</guid>
+      <description>In this article I am going to talk about my experience at Hashedin University, Which is a 2-month intensive yet fun-filled unique boot camp run every year by HashedIn Technologies.
+ Each Week we used to get exposure of new tech stacks and we learn those technologies from scratch in the first half of the week and in the last half we used to get an assignment on that tech stack.</description>
+    </item>
+    
+  </channel>
+</rss>

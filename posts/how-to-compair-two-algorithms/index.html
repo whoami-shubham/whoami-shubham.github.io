@@ -1,0 +1,539 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>How to Compare Two Algorithms | shubham's Blog</title>
+<meta name=keywords content="algorithm">
+<meta name=description content="Let&rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let&rsquo;s assume Alice and Bob took a programming course this semester and john didn&rsquo;t. john  went to hangout with alice and bob">
+<meta name=author content="Shubham">
+<link rel=canonical href=https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css integrity="sha256-b2AFbUTT9+tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as=style>
+<link rel=preload href=/images/shubham.jpeg as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://whoami-shubham.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://whoami-shubham.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://whoami-shubham.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://whoami-shubham.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://whoami-shubham.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.87.0">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="How to Compare Two Algorithms">
+<meta property="og:description" content="Let&rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let&rsquo;s assume Alice and Bob took a programming course this semester and john didn&rsquo;t. john  went to hangout with alice and bob">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"><meta property="og:image" content="https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2018-11-17T04:18:45+00:00">
+<meta property="article:modified_time" content="2018-11-17T04:18:45+00:00"><meta property="og:site_name" content="shubham's Blog">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:title content="How to Compare Two Algorithms">
+<meta name=twitter:description content="Let&rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let&rsquo;s assume Alice and Bob took a programming course this semester and john didn&rsquo;t. john  went to hangout with alice and bob">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://whoami-shubham.github.io/posts/"},{"@type":"ListItem","position":2,"name":"How to Compare Two Algorithms","item":"https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Compare Two Algorithms","name":"How to Compare Two Algorithms","description":"Let\u0026rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let\u0026rsquo;s assume Alice and Bob took a programming course this semester and john didn\u0026rsquo;t. john  went to hangout with alice and bob","keywords":["algorithm"],"articleBody":".conv{ padding: 10px; text-align: justify; } .john{ color:#4285F4; } .bob{ color:#F4B400; } .alice{ color:#DB4437; } body{ font-size: 1.2rem; } @media (max-width: 768px){ body{ font-size: 0.7rem; } .post-title{ font-size:28px; } }   Let’s understand this with a story. Alice,Bob, and john are best friends, Let’s assume Alice and Bob took a programming course this semester and john didn’t. john went to hangout with alice and bob. conversation goes like this. John: “Hey Alice what are you doing ?”  Alice:“We are writing programs for our assignments.\" John:“Hey Bob are You coding the same problem ?\" Bob:“Yes.\"\nJohn:“It’s look like alice code is more efficient than your’s isn’t it?\"\nBob:“Why do you think so ?\"\nJohn:“As length of her program is lesser.\"\nBob:“we can’t compare two Algorithm by just number of lines of code .\"\nJohn:“why?\"\nBob:“Suppose if i have written a program in c in 100 lines then i can write same program in python in 20 lines or less that doesn’t mean c program is less efficient than python”\nJohn:“Then you must be comparing it with running time. right ? “\nBob:\" Nope .we can not compare two Algorithm by execution time.\"\nJohn:“why ?\"\nBob:“Because suppose Alice computer is faster than mine . My computer will take more time to run than her.\"\nJohn:“What if we run both program on same computer ?\"\nBob:“Well, there are a lot’s of processes running at same time. suppose i am playing a game and running this program same time then game is hogging all my memories that might slow my program. even if i would run same program on my computer multiple times, execution time would be different each time and the differnce between these execution time would be random. to compare them by execution time you must have to determine CPU time.\"\nJohn:“Then Why don’t you calculate CPU time ?\"\nBob:“Measuring CPU time is difficult. If you are running on a multi-user machine, then elapsed time is not the correct measure. You must measure CPU time. But for certain programming languages, additional features might run at unpredictable results and you may not wish to include these in your measurements. For example, if you use Java, the Java garbage collector will run at various points to reclaim the memory space used by unneeded objects. You may want to exclude from your measurements any time spent garbage collecting. Another problem is that the timing commands provided by many programming languages do not report times to a sufficient level of precision. for most problems there can be many bottleneck test cases you have to find out CPU time of program for each test case and then take average of that to find out execution time.\"\nJohn:“Then what is best way to compare two Algorithms ?\"\nBob:“There is a notation called asymptotic notation to measure efficiency of Algorithm.\"\nJohn:“It sounds like complex. can you explain it in simple way ?\"\nBob:\" it’s not complex . in asymptotic notation we always talk about rate of growth of program.rate of growth means how does the execution time changes as the size of input grows. for example if you have to print a number from 1 to n then it will take linear time why ? because run time of your program is proportional to n . how do you know that ? suppose if n is 10 then your print statement will execute 10 times if i change n to 100 then print statement will execute 100 times. as n is grows 10 times your task of printing is also grows 10 times.\"\n**story over** now you'll have basic understanding how to compare two programs. now you would be thinking why we care about efficiency it is not sufficient my program is giving correct output ?. suppose if you want to buy some product on Amazon and amazon takes 10s or more each time whenever you click on some option. would you use it in 2018 ? yes you won't. now if you're thinking how to predict how much time a program will take to execute in general then skim through the following functions and their rate of growth with respect to input size 'n' a normal computer can execute 109 instruction per second. suppose we have two algorithm and you are going to run both for input size 1000 and one algorithm has time complexity of O(n) then how much second computer will take to give you result ? 1000/109 = 1 micro second but it is not exact value it would took few mili seconds in worst case. and other hand we take second algorithm for same input size with different time complexity lets take O(2n) then it will take 21000/109 = 10301/109  10290 seconds if we divide it by number of seconds in a year(3 * 107) which will still  10280 years which is more than 10269 times of age of universe , you don't want to write such algorithms for real world problem.then what is solution ? chose algorithm that fulfill your needs. to know which algorithm will fulfill your needs you should know how to measure complexity of algorithm. There are two types of complexity that we talk about for algorithms 1.Time Complexity 2.Space Complexity 1.Time Complexity: let’s talk about how to find Time complexity of a program . consider following code snippet.\n1 2 3 4 5 6 7 8 9 10  #include\tint main(){ int n; scanf(\"%d\",\u0026n); while(n0){ printf(\"%d\\n\",n); n--; } return 0; }   what will be the output of this program? your answer would be it depends on \"n\". can we still predict how many times while loop will executed ?\nyes we can still find out three cases\n1.maximum how many times loop will be executed.(worst case)\n2.minimum how many times loop will be executed.(best case)\n3.average how many times loop will be executed.(average case)\n what will be the minimum number of times while loop will be executed ? 0 times .when n1.Big O ( for worst case) 2.Omega ( for best case)\n3.Theta ( for average case)\n\nsuppose You have bought a Macbook pro in 1499$ . and one of your friend asked you how much did it cost ? what would you say ? 1500$ right ? (unless you have a friend which would tell you i could have bought this for you for free . moreover he would have made you CEO of apple .)\nwhy did you say that ? because 1499$ was huge compare to 1$ you can neglect it. similarly most of the time we are neglecting some constants or less dominating terms in this analysis. for e.g You have a function f(x) = n3 + n + 1 is can be equal to n3 by multiplying some constants into it. it will be more clear when we move further. let's discuss about Asymptotic notations.\n1.Big O notation (upper bounding function):  we represent worst case complexity of an algorithm using this notation. suppose you have a function f(x) then what would be the upper bounding function of f(x)? upper bounding function mean the function which gives f(x) maximum rate of growth for large input .\nfor example f(x) = n3 + n + 1 for larger value of n , n3 would give more rate of growth to f(x) than n and 1 hence n3 is upper bounding function of f(x) let's denote upper bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values , c0\ne.g: f(x) = 2n + 4\nwhat would be g(x) ?\nin 2n and 4 , 2n have higher rate of growth hence g(x) = n\nwhat will be c? 2n+4n\nfor cn could never greater or equal to f(x), let’s take c=3\n2n+4=4 hence 2n+4 = O(n) after some value of n ,c*g(x) will be always = f(x)\nso any function which is asymptotically greater than g(x) will be also upper bounding function of f(x).e.g 2n+4 = O(n2) but most of the time we are interested in tightest upper bounding function which is O(n) \n2.Omega notation (lower bounding function): we represent best case complexity of an algorithm using this notation. suppose you have a function f(x) then the lower bounding function mean the function which gives the largest rate of growth which is less than or equal to the rate of growth of f(x) for example f(x) = n3 + n + 1 for larger value of n , n3 would give less than the of growth to f(x) hence n3 is upper bounding function of f(x) let’s denote lower bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values\ne.g: f(x) = 2n + 4 what would be g(x) ?\nn have rate of growth less than f(x) hence g(x) = n\nwhat will be c? 2n+4=cn\ncn could never greater than f(x),take c=2\n2n+4=0 hence 2n+4 = Ω(n) \n3.theta notation (order function): We represent average complexity of an algorithm using this notation. This notation decides whether upper and lower bounds of a function is same. if upper and lower bounds of a function is same then theta would be also same. mathematically\nwhere c1=3 and c1,c20\ne.g: f(x) = 2n + 4\nf(x) = O(n)\nf(x) = Ω(n)\nf(x) = Θ(n)\n 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  #include\tint main(){ { // block 1 n \t} { // block 2 n^2 \t} { // block 3 1 \t} return 0; }   in the above code suppose block 1 has n cost block 2 has n2 cost and block 3 has 1 (constant) cost. then total cost is n2 +n+1 . but here n and 1 is very smaller than n2 . when n2 will be greater than n and 1 ? since we generally talk about large inputs to find complexity hence as we increase n1 , n2 will be always greater than 1 and n. now you would be thinking how to find cost ?. cost is nothing but how much times instructions get executed. let's understand this by an example.lets analyse each block one by one\n 1 2 3 4 5 6  for(i=0;in;i++) // 1st block \t{ printf(\"hello world !\"); }   in first block how many times for loop will be executed ? n times right ? hence cost of this block is n or time complexity is O(n) in worst case. what will be the best case time complexity ? when n1 2 3 4 5 6 7 8 9  for(i=0;in;i++) // 2nd block  { for(j=0;jn;j++) { printf(\"hello world !\"); } }   in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n2, time complexity O(n2) for worst case.what will be the best case time complexity ? when n2)/2 = n2/2 times so average time complexity would be Θ(n2) \n1 2 3 4 5 6 7 8 9  for(i=0;in;i++) // 3rd block \t{ printf(\"hello world !\"); if(i==2){ break; } }   for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) . \n1 2 3 4 5  for(i=1;in;i=i*2) // 4th block  { printf(\"hello world !\"); }   for 4th block how many times for loop get executed ? take few examples to convience yourself . value of i will be increasing from 1 till ik when will be 2k  n . take log base 2 both sides log2(2k)log2(n)\nk log2(n)\nso this loop will be executing around log2(n) times. time complexities would be O(log(n)), Ω(1) and Θ(log(n))\nwhat if i start at i=0 ? how many times this loop would be executed ? forever right ? if n0 \n1 2 3 4 5  for(i=1;i10;i++) // 5th block \t{ printf(\"hello world !\"); }   for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is k and value of constant is = 10k then constant would affect execution time. \n1 2 3 4 5 6 7 8 9 10  j=0; for(i=0;in;i++) // 6th block  { for(;jn;j++) { printf(\"hello world !\"); } }   for 6th block how many times for loop get executed ? for i=0 inner loop will execute n times after that inner loop will not executed why ? because unlike 2nd block we are not initializing j for each i . so how may times loop will be executed ? 1*n ( first time i=0 inner loop will execute n times and outer loop will executed 1 times) + n-1( i=1 to n-1) times = 2n-1 now we will eliminate constants so it will become n , time complexities O(n),Ω(1) and Θ(n) \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  void merge(int a, int b, int low,int mid, int high) { // some O(n) operation  } void mergesort(int a, int b, int low, int high) // T(n)  { int mid; if(lowhigh) { mid=(low+high)/2; // O(1)  mergesort(a,b,low,mid); // T(n/2)  mergesort(a,b,mid+1,high); // T(n/2)  merge(a,b,low,mid,high); // O(n)  } }   For recursive function: for recursive function like above you need to calculate time complexity using back substitution algorithm. lets see how this works. suppose time complexity of this function is T(n)\nthen how can we write T(n)? T(n) = 2T(n/2) + cn —- (1) (neglected O(1) operation) T(n/2) = 2T((n/2)/2) + cn/2 T(n/2) = 2T(n/4) + cn/2 now substitute value of T(n/2) into equation (1) we will get T(n) = 2 * 2T(n/4) + 2* cn/2 + cn T(n) = 4T(n/4) + 2cn from above observation you would get following result\nT(n) = 2k*T(n/2k) + kcn when n=1 then T(n)=1 so, n/2k = 1 2k = n k = log2(n) on substituting value k in T(n) ,T(n) = 1 + log(n)*c*n\nso time complexity would be O(nlogn)\nwe can also calculate this using master’s theorem also but this is more generalized method.\n2.Space Complexity:\nif you have learned above concepts then you already know how to calculate sapce complexity . This article become long that’s why i wouldn’t discussed this. for 5 min read go to this link \n","wordCount":"2442","inLanguage":"en","datePublished":"2018-11-17T04:18:45Z","dateModified":"2018-11-17T04:18:45Z","author":{"@type":"Person","name":"Shubham"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"},"publisher":{"@type":"Organization","name":"shubham's Blog","logo":{"@type":"ImageObject","url":"https://whoami-shubham.github.io/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://whoami-shubham.github.io/ accesskey=h title="Home (Alt + H)">
+<img src=/images/shubham.jpeg alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://whoami-shubham.github.io/categories/ title=categories>
+<span>categories</span>
+</a>
+</li>
+<li>
+<a href=https://whoami-shubham.github.io/tags/ title=tags>
+<span>tags</span>
+</a>
+</li>
+<li>
+<a href=https://whoamishubham.github.io title=portfolio>
+<span>portfolio</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://whoami-shubham.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://whoami-shubham.github.io/posts/>Posts</a></div>
+<h1 class=post-title>
+How to Compare Two Algorithms
+</h1>
+<div class=post-meta><span title="2018-11-17 04:18:45 +0000 UTC">November 17, 2018</span>&nbsp;·&nbsp;12 min&nbsp;·&nbsp;Shubham&nbsp;|&nbsp;<a href=https://github.com/whoami-shubham/whoami-shubham.github.io/blob/code/content/posts/how-to-compair-two-algorithms.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+</div>
+</header>
+<div class=post-content><style type=text/css>.conv{padding:10px;text-align:justify}.john{color:#4285f4}.bob{color:#f4b400}.alice{color:#db4437}body{font-size:1.2rem}@media(max-width:768px){body{font-size:.7rem}.post-title{font-size:28px}}</style>
+<p><br><br>
+<span class=conv>
+Let&rsquo;s understand this with a story.
+Alice,Bob, and john are best friends, Let&rsquo;s assume Alice and Bob took a programming course this semester and john didn&rsquo;t. john went to hangout with alice and bob. conversation goes like this.<br><br>
+<span class=john>John:</span> <span class=conv>&ldquo;Hey Alice what are you doing ?&rdquo; </span><br>
+<span class=alice>Alice:</span><span class=conv> &ldquo;We are writing programs for our assignments."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;Hey Bob are You coding the same problem ?"</span><br>
+<span class=bob>Bob:</span><span class=conv>&ldquo;Yes."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;It&rsquo;s look like alice code is more efficient than your&rsquo;s isn&rsquo;t it?"</span><br>
+<span class=bob>Bob:</span><span class=conv>&ldquo;Why do you think so ?"</span><br>
+<span class=john>John:</span><span class=conv>&ldquo;As length of her program is lesser."</span><br>
+<span class=bob>Bob:</span><span class=conv> &ldquo;we can&rsquo;t compare two Algorithm by just number of lines of code ."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;why?"</span><br>
+<span class=bob>Bob:</span><span class=conv> &ldquo;Suppose if i have written a program in c in 100 lines then i can write same program in python in 20 lines or less that doesn&rsquo;t mean
+c program is less efficient than python&rdquo;</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;Then you must be comparing it with running time. right ? &ldquo;</span><br>
+<span class=bob>Bob:</span><span class=conv> " Nope .we can not compare two Algorithm by execution time."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;why ?"</span><br>
+<span class=bob>Bob:</span><span class=conv> &ldquo;Because suppose Alice computer is faster than mine .
+My computer will take more time to run than her."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;What if we run both program on same computer ?"</span><br>
+<span class=bob>Bob:</span><span class=conv> &ldquo;Well, there are a lot&rsquo;s of processes running at same time.
+suppose i am playing a game and running this program same time
+then game is hogging all my memories that might slow my program.
+even if i would run same program on my computer multiple times,
+execution time would be different each time and the differnce
+between these execution time would be random. to compare them by execution time you must have to determine CPU time."</span><br>
+<span class=john>John:</span><span class=conv>&ldquo;Then Why don&rsquo;t you calculate CPU time ?"</span><br>
+<span class=bob>Bob:</span><span class=conv>&ldquo;Measuring CPU time is difficult. If you are running on a multi-user machine, then elapsed time is not the correct measure. You must measure CPU time. But for certain programming languages, additional features might run at unpredictable results and you may not wish to include these in your measurements. For example, if you use Java, the Java garbage collector will run at various points to reclaim the memory space used
+by unneeded objects. You may want to exclude from your measurements any
+time spent garbage collecting. Another problem is that the timing commands
+provided by many programming languages do not report times to a sufficient
+level of precision. for most problems there can be many bottleneck
+test cases you have to find out CPU time of program for each test case and then take average of that to find out execution time."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;Then what is best way to compare two Algorithms ?"</span><br>
+<span class=bob>Bob:</span><span class=conv> &ldquo;There is a notation called asymptotic notation to measure efficiency of Algorithm."</span><br>
+<span class=john>John:</span><span class=conv> &ldquo;It sounds like complex. can you explain it in simple way ?"</span><br>
+<span class=bob>Bob:</span><span class=conv> " it&rsquo;s not complex . in asymptotic notation
+we always talk about rate of growth of program.rate of growth means
+how does the execution time changes as the size of input grows.
+for example if you have to print a number from 1 to n then it will
+take linear time why ? because run time of your program is proportional to n .
+how do you know that ? suppose if n is 10 then your print statement will
+execute 10 times if i change n to 100 then print statement will execute 100 times.
+as n is grows 10 times your task of printing is also grows 10 times."</span><br></p>
+<center><span style=text-align:center;font-weight:700>**story over**</span></center> <br><br><span class=conv>
+now you'll have basic understanding how to compare two programs.
+now you would be thinking why we care about efficiency it is not sufficient my program is giving correct output ?. suppose if you want to buy some product on Amazon and amazon takes 10s or more each time whenever you click on some option. would you use it in 2018 ?
+yes you won't. now if you're thinking how to predict how much time a program will take to execute in general then skim through the following functions and their rate of growth with respect to input size 'n'
+<p><img loading=lazy src=/images/rate_of_growth.png alt=growth>
+</p>
+<br>
+a normal computer can execute 10<sup>9</sup> instruction per second. suppose we have two algorithm and you are going to run both for input size 1000 and one algorithm has <span title="it is just  a fancy word for rate of growth">time complexity</span> of O(n) then how much second computer will take to give you result ?
+1000/10<sup>9</sup> = 1 micro second but it is not exact value it would took few mili seconds in worst case. and other hand we take second algorithm for same input size with different time complexity lets take O(2<sup>n</sup>) then it will take 2<sup>1000</sup>/10<sup>9</sup> = 10<sup>301</sup>/10<sup>9</sup> > 10<sup>290</sup> seconds if we divide it by number of seconds in a year(3 * 10<sup>7</sup>) which will still > 10<sup>280</sup> years which is more than 10<sup>269</sup> times of age of universe , you don't want to write such algorithms for real world problem.then what is solution ? chose algorithm that fulfill your needs. to know which algorithm will fulfill your needs you should know how to measure complexity of algorithm.
+There are two types of complexity that we talk about for algorithms
+<span class="list-group-item conv">1.Time Complexity</span>
+<span class="list-group-item conv">2.Space Complexity</span>
+<p><span class="list-group-item conv" style=color:skyblue>1.Time Complexity:</span>
+<span class=conv>
+let&rsquo;s talk about how to find Time complexity of a program .
+consider following code snippet.</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>	<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+	<span style=color:#66d9ef>int</span> n;
+	scanf(<span style=color:#e6db74>&#34;%d&#34;</span>,<span style=color:#f92672>&amp;</span>n);
+	<span style=color:#66d9ef>while</span>(n<span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span>){
+		printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,n);
+		n<span style=color:#f92672>--</span>;
+	}
+	 <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+	}
+</code></pre></td></tr></table>
+</div>
+</div><span class=conv>
+what will be the output of this program? your answer would be it depends on "n".
+can we still predict how many times while loop will executed ?<br> yes we can still find out three cases<br><br>
+<span class=list-group>
+<span class=list-group-item>1.maximum how many times loop will be executed.(worst case)</span><br>
+<span class=list-group-item>2.minimum how many times loop will be executed.(best case)</span><br>
+<span class=list-group-item>3.average how many times loop will be executed.(average case)</span><br>
+</span>
+<br><br>
+what will be the minimum number of times while loop will be executed ? 0 times .when n<=0.what will be the maximum number of times while loop will be executed ? n times (n would be max size of int) now what will be the average number of times while loop will be executed ? (0+n)/2 = n/2 times.In asymptotic notations we do similar analysis.There are three most often used asymptotic notations are following <br> <br>
+<span class=list-group>
+<span class=list-group-item>1.Big O ( for worst case)</span> <br>
+<span class=list-group-item>2.Omega ( for best case)</span><br>
+<span class=list-group-item>3.Theta ( for average case)</span><br>
+</span><br>
+suppose You have bought a Macbook pro in 1499$ . and one of your friend asked you how much did it cost ? what would you say ? 1500$ right ? (unless you have a friend which would tell you i could have bought this for you for free . moreover he would have made you CEO of apple .)<br>
+why did you say that ? because 1499$ was huge compare to 1$ you can neglect it. similarly most of the time we are neglecting some constants or less dominating terms in this analysis. for e.g
+You have a function f(x) = n<sup>3</sup> + n + 1 is can be equal to n<sup>3</sup> by multiplying some constants into it. it will be more clear when we move further.
+let's discuss about Asymptotic notations.<br><br>
+<span class=list-group-item>
+<span style=color:#4285f4>1.Big O notation (upper bounding function): </span>
+we represent worst case complexity of an algorithm using this notation.
+suppose you have a function f(x) then what would be the upper bounding function of f(x)?
+upper bounding function mean the function which gives f(x) maximum rate of growth for large input .<br>
+for example f(x) = n<sup>3</sup> + n + 1 for larger value of n , n<sup>3</sup> would give more rate of growth to f(x) than n and 1 hence n<sup>3</sup> is upper bounding function of
+f(x) let's denote upper bounding function with g(x) then mathematically<br>
+<p><img loading=lazy src=/images/bigo.png alt=bigo>
+</p>
+<p>where c can have infinte numbers of values , c>0<br>
+e.g: f(x) = 2n + 4<br>
+what would be g(x) ?<br>
+in 2n and 4 , 2n have higher rate of growth hence g(x) = n<br>
+what will be c? 2n+4&lt;=c<em>n<br>
+for c&lt;=2 c</em>n could never greater or equal to f(x), let&rsquo;s take c=3<br>
+2n+4&lt;=3n when n>=4 hence 2n+4 = O(n) <br>
+after some value of n ,c*g(x) will be always >= f(x)<br>
+so any function which is asymptotically greater than g(x) will be also upper bounding function of f(x).e.g 2n+4 = O(n<sup>2</sup>) but most of the time we are interested in tightest upper bounding function which is O(n)
+</span><br>
+<span class=list-group-item>
+<span style=color:#f4b400>2.Omega notation (lower bounding function):</span>
+we represent best case complexity of an algorithm using this notation.
+suppose you have a function f(x) then the lower bounding function mean the function which gives the largest rate of growth which is less than or equal to the rate of growth of f(x) for example f(x) = n<sup>3</sup> + n + 1 for larger value of n , n<sup>3</sup> would give less than the of growth to f(x) hence n<sup>3</sup> is upper bounding function of f(x) let&rsquo;s denote lower bounding function with g(x) then mathematically<br></p>
+<p><img loading=lazy src=/images/omega.png alt=omega>
+</p>
+<p>where <code>c</code> can have infinte numbers of values<br>
+e.g: f(x) = 2n + 4 <br>
+what would be g(x) ?<br>
+n have rate of growth less than f(x) hence g(x) = n<br>
+what will be c? 2n+4>=c<em>n<br>
+c&lt;=2 c</em>n could never greater than f(x),take c=2<br>
+2n+4&lt;=2n when n>=0 hence 2n+4 = Ω(n)
+</span><br>
+<span class=list-group-item>
+<span style=color:#db4437>3.theta notation (order function):</span>
+We represent average complexity of an algorithm using this notation.
+This notation decides whether upper and lower bounds of a function is same.
+if upper and lower bounds of a function is same then theta would be also same. mathematically<br></p>
+<p><img loading=lazy src=/images/theta.png alt=theta>
+</p>
+<br>
+where c1<=2 and c2>=3 and c1,c2>0<br>
+e.g: f(x) = 2n + 4<br>
+f(x) = O(n)<br>
+f(x) = &#8486;(n)<br>
+f(x) = &#920;(n)<br>
+</span>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     
+	<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>	 <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+		{
+	        <span style=color:#75715e>// block 1  n
+</span><span style=color:#75715e></span>	     }
+	     
+	     {
+	     	<span style=color:#75715e>// block 2   n^2
+</span><span style=color:#75715e></span>	     }
+	     {
+	     	 <span style=color:#75715e>// block 3   1
+</span><span style=color:#75715e></span>	     }
+	 <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+	}
+</code></pre></td></tr></table>
+</div>
+</div><span class=conv>
+in the above code suppose block 1 has n cost block 2 has n<sup>2</sup> cost and block 3 has 1 (constant) cost. then total cost is n<sup>2</sup> +n+1 . but here n and 1 is very smaller than n<sup>2</sup> . when n<sup>2</sup> will be greater than n and 1 ? since we generally talk about large inputs to find complexity hence as we increase n>1 , n<sup>2</sup> will be always greater than 1 and n. now you would be thinking how to find cost ?. cost is nothing but how much times instructions get executed. let's understand this by an example.lets analyse each block one by one<br>
+</span>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+	  <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>//  1st block
+</span><span style=color:#75715e></span>		{
+		printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+	    }
+
+</code></pre></td></tr></table>
+</div>
+</div><span class=conv>
+<span class=list-group-item>in first block how many times for loop will be executed ? n times right ? hence cost of this block is n or time complexity is O(n) in worst case. what will be the best case time complexity ? when n<=0 loop will execute 0 times hence best case time complexity will be &#8486;(1),what will be time complexity for average case ? in average case for loop will be executing (0+n)/2 = n/2 times so average time complexity would be &#920;(n)
+</span>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+       <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 2nd block
+</span><span style=color:#75715e></span>     {
+          <span style=color:#66d9ef>for</span>(j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;j<span style=color:#f92672>&lt;</span>n;j<span style=color:#f92672>++</span>)
+           {
+              printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+           }
+       }
+
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv">in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n<sup>2</sup>, time complexity O(n<sup>2</sup>) for worst case.what will be the best case time complexity ? when n&lt;=0 loop will execute 0 times hence best case time complexity will be Ω(1) , in average case for loop will be executing (0+n<sup>2</sup>)/2 = n<sup>2</sup>/2 times so average time complexity would be Θ(n<sup>2</sup>)
+</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+		 <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 3rd block
+</span><span style=color:#75715e></span>		{
+		    printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+		    <span style=color:#66d9ef>if</span>(i<span style=color:#f92672>==</span><span style=color:#ae81ff>2</span>){
+			<span style=color:#66d9ef>break</span>;
+		       }
+		 }
+
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv"> for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) .
+</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>=</span>i<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>) <span style=color:#75715e>// 4th block
+</span><span style=color:#75715e></span>             {
+                   printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+                 }    
+
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv"> for 4th block how many times for loop get executed ?
+take few examples to convience yourself . value of i will be increasing from 1 till i&lt;n.
+1 2 4 8 2<sup>k</sup> when will be 2<sup>k</sup> > n . take log base 2 both sides
+log2(2<sup>k</sup>)>log2(n)<br>
+k >log2(n)<br>
+so this loop will be executing around log2(n) times. time complexities would be O(log(n)), Ω(1) and
+Θ(log(n))<br> what if i start at i=0 ? how many times this loop would be executed ? forever right ? if n>0
+</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>		  
+     <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span>;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 5th block
+</span><span style=color:#75715e></span>	{
+        printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+    }   
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv"> for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is &lt;= 10<sup>k</sup> and value of constant is >= 10<sup>k</sup> then constant would affect execution time.
+</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>         
+   j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
+   <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 6th block
+</span><span style=color:#75715e></span>   {
+         <span style=color:#66d9ef>for</span>(;j<span style=color:#f92672>&lt;</span>n;j<span style=color:#f92672>++</span>)
+       {
+          printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
+       }
+   }
+   
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv"> for 6th block how many times for loop get executed ?
+for i=0 inner loop will execute n times after that inner loop will not executed why ? because unlike 2nd block we are not initializing j for each i . so how may times loop will be executed ? 1*n ( first time i=0 inner loop will execute n times and outer loop will executed 1 times) + n-1( i=1 to n-1) times = 2n-1 now we will eliminate constants so it will become n ,
+time complexities O(n),Ω(1) and
+Θ(n)
+</span></p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>  <span style=color:#66d9ef>void</span>  <span style=color:#a6e22e>merge</span>(<span style=color:#66d9ef>int</span> a, <span style=color:#66d9ef>int</span> b, <span style=color:#66d9ef>int</span> low,<span style=color:#66d9ef>int</span> mid, <span style=color:#66d9ef>int</span> high)
+  {
+        <span style=color:#75715e>// some O(n) operation
+</span><span style=color:#75715e></span> }  
+  <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>mergesort</span>(<span style=color:#66d9ef>int</span> a, <span style=color:#66d9ef>int</span> b, <span style=color:#66d9ef>int</span> low, <span style=color:#66d9ef>int</span> high) <span style=color:#75715e>// T(n)
+</span><span style=color:#75715e></span>       
+       {
+
+           <span style=color:#66d9ef>int</span> mid;
+           <span style=color:#66d9ef>if</span>(low<span style=color:#f92672>&lt;</span>high)
+           {
+               mid<span style=color:#f92672>=</span>(low<span style=color:#f92672>+</span>high)<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>;      <span style=color:#75715e>// O(1)
+</span><span style=color:#75715e></span>               mergesort(a,b,low,mid); <span style=color:#75715e>// T(n/2)
+</span><span style=color:#75715e></span>               mergesort(a,b,mid<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>,high); <span style=color:#75715e>// T(n/2)
+</span><span style=color:#75715e></span>               merge(a,b,low,mid,high);  <span style=color:#75715e>// O(n)
+</span><span style=color:#75715e></span>           }
+
+
+       }
+        
+</code></pre></td></tr></table>
+</div>
+</div><p><span class="list-group-item conv"> <span style=color:#db4437>For recursive function:</span>
+for recursive function like above you need to calculate time complexity using back substitution algorithm. lets see how this works.
+suppose time complexity of this function is T(n)<br>
+then how can we write T(n)? <br>
+T(n) = 2T(n/2) + cn      &mdash;- (1) (neglected O(1) operation) <br>
+T(n/2) = 2T((n/2)/2) + cn/2 <br>
+T(n/2) = 2T(n/4) + cn/2 <br>
+now substitute value of T(n/2) into equation (1) we will get <br>
+T(n) = 2 * 2T(n/4) + 2* cn/2 + cn <br>
+T(n) = 4T(n/4) + 2cn <br>
+from above observation you would get following result<br>
+T(n) = 2<sup>k</sup>*T(n/2<sup>k</sup>) + kcn <br>
+when n=1 then T(n)=1 <br>
+so, n/2<sup>k</sup> = 1 <br>
+2<sup>k</sup> = n <br>
+k = log2(n) <br>
+on substituting value k in T(n) ,T(n) = 1 + log(n)*c*n<br>
+so time complexity would be O(nlogn)<br>
+we can also calculate this using <a href=https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>master&rsquo;s theorem</a> also but this is
+more generalized method.</p>
+<p><span class="list-group-item conv"><span style=color:#f4b400>2.Space Complexity:</span><br>
+if you have learned above concepts then you already know how to calculate sapce complexity . This article become long that&rsquo;s why i wouldn&rsquo;t discussed this. for 5 min read go to <a href=https://www.cs.northwestern.edu/academics/courses/311/html/space-complexity.html>this</a> link
+</span></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://whoami-shubham.github.io/tags/algorithm/>algorithm</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://whoami-shubham.github.io/posts/how-to-preprocess-data-for-regression-model/>
+<span class=title>« Prev Page</span>
+<br>
+<span>how to preprocess data for regression model</span>
+</a>
+<a class=next href=https://whoami-shubham.github.io/posts/hello-world/>
+<span class=title>Next Page »</span>
+<br>
+<span>Hello World !</span>
+</a>
+</nav>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on twitter" href="https://twitter.com/intent/tweet/?text=How%20to%20Compare%20Two%20Algorithms&url=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f&hashtags=algorithm"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f&title=How%20to%20Compare%20Two%20Algorithms&summary=How%20to%20Compare%20Two%20Algorithms&source=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f&title=How%20to%20Compare%20Two%20Algorithms"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on whatsapp" href="https://api.whatsapp.com/send?text=How%20to%20Compare%20Two%20Algorithms%20-%20https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share How to Compare Two Algorithms on telegram" href="https://telegram.me/share/url?text=How%20to%20Compare%20Two%20Algorithms&url=https%3a%2f%2fwhoami-shubham.github.io%2fposts%2fhow-to-compair-two-algorithms%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://whoami-shubham.github.io/>shubham's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
