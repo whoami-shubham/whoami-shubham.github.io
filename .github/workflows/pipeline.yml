@@ -40,5 +40,4 @@ jobs:
           external_repository: whoami-shubham/whoami-shubham.github.io
           publish_dir: ./public
           publish_branch: master
-          force_orphan: true
         #   cname: example.com
