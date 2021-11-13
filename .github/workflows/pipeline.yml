@@ -11,9 +11,9 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Clone theme
-        # If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+#       - name: Clone theme
+#         # If you have the theme added as submodule, you can pull it and use the most updated version
+#         run: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
         
       - name: Update theme
         run: git submodule update --init --recursive
