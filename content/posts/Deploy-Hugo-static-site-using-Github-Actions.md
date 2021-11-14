@@ -28,8 +28,8 @@ I have Two branches
 - <span class="green">code</span> (where I keep Development code, I will create deployment build from this branch and store into master)
 
 All you need to do is 
- - create a Github access [token](https://github.com/settings/tokens/new) 
- - add access token value as repository secret at <repository-url>/settings/secrets/actions, 
+ - create a Github access token from here <span class="blue"> [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new) </span>
+ - add access token value as repository secret at ```<repository-url>/settings/secrets/actions``` 
    where key is```TOKEN``` this key we are going to use in Action
  - create Action
 
