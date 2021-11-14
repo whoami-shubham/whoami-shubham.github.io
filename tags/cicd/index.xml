@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CICD on shubham&#39;s Blog</title>
+    <link>https://whoami-shubham.github.io/tags/cicd/</link>
+    <description>Recent content in CICD on shubham&#39;s Blog</description>
+    <image>
+      <url>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://whoami-shubham.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://whoami-shubham.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Hugo static site using Github Actions on Github pages</title>
+      <link>https://whoami-shubham.github.io/posts/deploy-hugo-static-site-using-github-actions/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://whoami-shubham.github.io/posts/deploy-hugo-static-site-using-github-actions/</guid>
+      <description>If you already have static site built using Hugo, and whenever you need to updated or add new post on website you have to build the site locally and push the changes to github. then you might consider using Github Actions. It is free for public repository use</description>
+    </item>
+    
+  </channel>
+</rss>
