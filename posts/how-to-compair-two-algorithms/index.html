@@ -37,7 +37,7 @@
 <meta name=twitter:title content="How to Compare Two Algorithms">
 <meta name=twitter:description content="Let&rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let&rsquo;s assume Alice and Bob took a programming course this semester and john didn&rsquo;t. john  went to hangout with alice and bob">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://whoami-shubham.github.io/posts/"},{"@type":"ListItem","position":2,"name":"How to Compare Two Algorithms","item":"https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Compare Two Algorithms","name":"How to Compare Two Algorithms","description":"Let\u0026rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let\u0026rsquo;s assume Alice and Bob took a programming course this semester and john didn\u0026rsquo;t. john  went to hangout with alice and bob","keywords":["algorithm"],"articleBody":".conv{ padding: 10px; text-align: justify; } .john{ color:#4285F4; } .bob{ color:#F4B400; } .alice{ color:#DB4437; } body{ font-size: 1.2rem; } @media (max-width: 768px){ body{ font-size: 0.7rem; } .post-title{ font-size:28px; } }   Let’s understand this with a story. Alice,Bob, and john are best friends, Let’s assume Alice and Bob took a programming course this semester and john didn’t. john went to hangout with alice and bob. conversation goes like this. John: “Hey Alice what are you doing ?”  Alice:“We are writing programs for our assignments.\" John:“Hey Bob are You coding the same problem ?\" Bob:“Yes.\"\nJohn:“It’s look like alice code is more efficient than your’s isn’t it?\"\nBob:“Why do you think so ?\"\nJohn:“As length of her program is lesser.\"\nBob:“we can’t compare two Algorithm by just number of lines of code .\"\nJohn:“why?\"\nBob:“Suppose if i have written a program in c in 100 lines then i can write same program in python in 20 lines or less that doesn’t mean c program is less efficient than python”\nJohn:“Then you must be comparing it with running time. right ? “\nBob:\" Nope .we can not compare two Algorithm by execution time.\"\nJohn:“why ?\"\nBob:“Because suppose Alice computer is faster than mine . My computer will take more time to run than her.\"\nJohn:“What if we run both program on same computer ?\"\nBob:“Well, there are a lot’s of processes running at same time. suppose i am playing a game and running this program same time then game is hogging all my memories that might slow my program. even if i would run same program on my computer multiple times, execution time would be different each time and the differnce between these execution time would be random. to compare them by execution time you must have to determine CPU time.\"\nJohn:“Then Why don’t you calculate CPU time ?\"\nBob:“Measuring CPU time is difficult. If you are running on a multi-user machine, then elapsed time is not the correct measure. You must measure CPU time. But for certain programming languages, additional features might run at unpredictable results and you may not wish to include these in your measurements. For example, if you use Java, the Java garbage collector will run at various points to reclaim the memory space used by unneeded objects. You may want to exclude from your measurements any time spent garbage collecting. Another problem is that the timing commands provided by many programming languages do not report times to a sufficient level of precision. for most problems there can be many bottleneck test cases you have to find out CPU time of program for each test case and then take average of that to find out execution time.\"\nJohn:“Then what is best way to compare two Algorithms ?\"\nBob:“There is a notation called asymptotic notation to measure efficiency of Algorithm.\"\nJohn:“It sounds like complex. can you explain it in simple way ?\"\nBob:\" it’s not complex . in asymptotic notation we always talk about rate of growth of program.rate of growth means how does the execution time changes as the size of input grows. for example if you have to print a number from 1 to n then it will take linear time why ? because run time of your program is proportional to n . how do you know that ? suppose if n is 10 then your print statement will execute 10 times if i change n to 100 then print statement will execute 100 times. as n is grows 10 times your task of printing is also grows 10 times.\"\n**story over** now you'll have basic understanding how to compare two programs. now you would be thinking why we care about efficiency it is not sufficient my program is giving correct output ?. suppose if you want to buy some product on Amazon and amazon takes 10s or more each time whenever you click on some option. would you use it in 2018 ? yes you won't. now if you're thinking how to predict how much time a program will take to execute in general then skim through the following functions and their rate of growth with respect to input size 'n' a normal computer can execute 109 instruction per second. suppose we have two algorithm and you are going to run both for input size 1000 and one algorithm has time complexity of O(n) then how much second computer will take to give you result ? 1000/109 = 1 micro second but it is not exact value it would took few mili seconds in worst case. and other hand we take second algorithm for same input size with different time complexity lets take O(2n) then it will take 21000/109 = 10301/109  10290 seconds if we divide it by number of seconds in a year(3 * 107) which will still  10280 years which is more than 10269 times of age of universe , you don't want to write such algorithms for real world problem.then what is solution ? chose algorithm that fulfill your needs. to know which algorithm will fulfill your needs you should know how to measure complexity of algorithm. There are two types of complexity that we talk about for algorithms 1.Time Complexity 2.Space Complexity 1.Time Complexity: let’s talk about how to find Time complexity of a program . consider following code snippet.\n1 2 3 4 5 6 7 8 9 10  #include\tint main(){ int n; scanf(\"%d\",\u0026n); while(n0){ printf(\"%d\\n\",n); n--; } return 0; }   what will be the output of this program? your answer would be it depends on \"n\". can we still predict how many times while loop will executed ?\nyes we can still find out three cases\n1.maximum how many times loop will be executed.(worst case)\n2.minimum how many times loop will be executed.(best case)\n3.average how many times loop will be executed.(average case)\n what will be the minimum number of times while loop will be executed ? 0 times .when n1.Big O ( for worst case) 2.Omega ( for best case)\n3.Theta ( for average case)\n\nsuppose You have bought a Macbook pro in 1499$ . and one of your friend asked you how much did it cost ? what would you say ? 1500$ right ? (unless you have a friend which would tell you i could have bought this for you for free . moreover he would have made you CEO of apple .)\nwhy did you say that ? because 1499$ was huge compare to 1$ you can neglect it. similarly most of the time we are neglecting some constants or less dominating terms in this analysis. for e.g You have a function f(x) = n3 + n + 1 is can be equal to n3 by multiplying some constants into it. it will be more clear when we move further. let's discuss about Asymptotic notations.\n1.Big O notation (upper bounding function):  we represent worst case complexity of an algorithm using this notation. suppose you have a function f(x) then what would be the upper bounding function of f(x)? upper bounding function mean the function which gives f(x) maximum rate of growth for large input .\nfor example f(x) = n3 + n + 1 for larger value of n , n3 would give more rate of growth to f(x) than n and 1 hence n3 is upper bounding function of f(x) let's denote upper bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values , c0\ne.g: f(x) = 2n + 4\nwhat would be g(x) ?\nin 2n and 4 , 2n have higher rate of growth hence g(x) = n\nwhat will be c? 2n+4n\nfor cn could never greater or equal to f(x), let’s take c=3\n2n+4=4 hence 2n+4 = O(n) after some value of n ,c*g(x) will be always = f(x)\nso any function which is asymptotically greater than g(x) will be also upper bounding function of f(x).e.g 2n+4 = O(n2) but most of the time we are interested in tightest upper bounding function which is O(n) \n2.Omega notation (lower bounding function): we represent best case complexity of an algorithm using this notation. suppose you have a function f(x) then the lower bounding function mean the function which gives the largest rate of growth which is less than or equal to the rate of growth of f(x) for example f(x) = n3 + n + 1 for larger value of n , n3 would give less than the of growth to f(x) hence n3 is upper bounding function of f(x) let’s denote lower bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values\ne.g: f(x) = 2n + 4 what would be g(x) ?\nn have rate of growth less than f(x) hence g(x) = n\nwhat will be c? 2n+4=cn\ncn could never greater than f(x),take c=2\n2n+4=0 hence 2n+4 = Ω(n) \n3.theta notation (order function): We represent average complexity of an algorithm using this notation. This notation decides whether upper and lower bounds of a function is same. if upper and lower bounds of a function is same then theta would be also same. mathematically\nwhere c1=3 and c1,c20\ne.g: f(x) = 2n + 4\nf(x) = O(n)\nf(x) = Ω(n)\nf(x) = Θ(n)\n 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  #include\tint main(){ { // block 1 n \t} { // block 2 n^2 \t} { // block 3 1 \t} return 0; }   in the above code suppose block 1 has n cost block 2 has n2 cost and block 3 has 1 (constant) cost. then total cost is n2 +n+1 . but here n and 1 is very smaller than n2 . when n2 will be greater than n and 1 ? since we generally talk about large inputs to find complexity hence as we increase n1 , n2 will be always greater than 1 and n. now you would be thinking how to find cost ?. cost is nothing but how much times instructions get executed. let's understand this by an example.lets analyse each block one by one\n 1 2 3 4 5 6  for(i=0;in;i++) // 1st block \t{ printf(\"hello world !\"); }   in first block how many times for loop will be executed ? n times right ? hence cost of this block is n or time complexity is O(n) in worst case. what will be the best case time complexity ? when n1 2 3 4 5 6 7 8 9  for(i=0;in;i++) // 2nd block  { for(j=0;jn;j++) { printf(\"hello world !\"); } }   in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n2, time complexity O(n2) for worst case.what will be the best case time complexity ? when n2)/2 = n2/2 times so average time complexity would be Θ(n2) \n1 2 3 4 5 6 7 8 9  for(i=0;in;i++) // 3rd block \t{ printf(\"hello world !\"); if(i==2){ break; } }   for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) . \n1 2 3 4 5  for(i=1;in;i=i*2) // 4th block  { printf(\"hello world !\"); }   for 4th block how many times for loop get executed ? take few examples to convience yourself . value of i will be increasing from 1 till ik when will be 2k  n . take log base 2 both sides log2(2k)log2(n)\nk log2(n)\nso this loop will be executing around log2(n) times. time complexities would be O(log(n)), Ω(1) and Θ(log(n))\nwhat if i start at i=0 ? how many times this loop would be executed ? forever right ? if n0 \n1 2 3 4 5  for(i=1;i10;i++) // 5th block \t{ printf(\"hello world !\"); }   for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is k and value of constant is = 10k then constant would affect execution time. \n1 2 3 4 5 6 7 8 9 10  j=0; for(i=0;in;i++) // 6th block  { for(;jn;j++) { printf(\"hello world !\"); } }   for 6th block how many times for loop get executed ? for i=0 inner loop will execute n times after that inner loop will not executed why ? because unlike 2nd block we are not initializing j for each i . so how may times loop will be executed ? 1*n ( first time i=0 inner loop will execute n times and outer loop will executed 1 times) + n-1( i=1 to n-1) times = 2n-1 now we will eliminate constants so it will become n , time complexities O(n),Ω(1) and Θ(n) \n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  void merge(int a, int b, int low,int mid, int high) { // some O(n) operation  } void mergesort(int a, int b, int low, int high) // T(n)  { int mid; if(lowhigh) { mid=(low+high)/2; // O(1)  mergesort(a,b,low,mid); // T(n/2)  mergesort(a,b,mid+1,high); // T(n/2)  merge(a,b,low,mid,high); // O(n)  } }   For recursive function: for recursive function like above you need to calculate time complexity using back substitution algorithm. lets see how this works. suppose time complexity of this function is T(n)\nthen how can we write T(n)? T(n) = 2T(n/2) + cn —- (1) (neglected O(1) operation) T(n/2) = 2T((n/2)/2) + cn/2 T(n/2) = 2T(n/4) + cn/2 now substitute value of T(n/2) into equation (1) we will get T(n) = 2 * 2T(n/4) + 2* cn/2 + cn T(n) = 4T(n/4) + 2cn from above observation you would get following result\nT(n) = 2k*T(n/2k) + kcn when n=1 then T(n)=1 so, n/2k = 1 2k = n k = log2(n) on substituting value k in T(n) ,T(n) = 1 + log(n)*c*n\nso time complexity would be O(nlogn)\nwe can also calculate this using master’s theorem also but this is more generalized method.\n2.Space Complexity:\nif you have learned above concepts then you already know how to calculate sapce complexity . This article become long that’s why i wouldn’t discussed this. for 5 min read go to this link \n","wordCount":"2442","inLanguage":"en","datePublished":"2018-11-17T04:18:45Z","dateModified":"2018-11-17T04:18:45Z","author":{"@type":"Person","name":"Shubham"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"},"publisher":{"@type":"Organization","name":"shubham's Blog","logo":{"@type":"ImageObject","url":"https://whoami-shubham.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Compare Two Algorithms","name":"How to Compare Two Algorithms","description":"Let\u0026rsquo;s understand this with a story. Alice,Bob, and john are best friends, Let\u0026rsquo;s assume Alice and Bob took a programming course this semester and john didn\u0026rsquo;t. john  went to hangout with alice and bob","keywords":["algorithm"],"articleBody":".conv{ padding: 10px; text-align: justify; } .john{ color:#4285F4; } .bob{ color:#F4B400; } .alice{ color:#DB4437; } body{ font-size: 1.2rem; } @media (max-width: 768px){ body{ font-size: 0.7rem; } .post-title{ font-size:28px; } }   Let’s understand this with a story. Alice,Bob, and john are best friends, Let’s assume Alice and Bob took a programming course this semester and john didn’t. john went to hangout with alice and bob. conversation goes like this. John: “Hey Alice what are you doing ?”  Alice:“We are writing programs for our assignments.\" John:“Hey Bob are You coding the same problem ?\" Bob:“Yes.\"\nJohn:“It’s look like alice code is more efficient than your’s isn’t it?\"\nBob:“Why do you think so ?\"\nJohn:“As length of her program is lesser.\"\nBob:“we can’t compare two Algorithm by just number of lines of code .\"\nJohn:“why?\"\nBob:“Suppose if i have written a program in c in 100 lines then i can write same program in python in 20 lines or less that doesn’t mean c program is less efficient than python”\nJohn:“Then you must be comparing it with running time. right ? “\nBob:\" Nope .we can not compare two Algorithm by execution time.\"\nJohn:“why ?\"\nBob:“Because suppose Alice computer is faster than mine . My computer will take more time to run than her.\"\nJohn:“What if we run both program on same computer ?\"\nBob:“Well, there are a lot’s of processes running at same time. suppose i am playing a game and running this program same time then game is hogging all my memories that might slow my program. even if i would run same program on my computer multiple times, execution time would be different each time and the differnce between these execution time would be random. to compare them by execution time you must have to determine CPU time.\"\nJohn:“Then Why don’t you calculate CPU time ?\"\nBob:“Measuring CPU time is difficult. If you are running on a multi-user machine, then elapsed time is not the correct measure. You must measure CPU time. But for certain programming languages, additional features might run at unpredictable results and you may not wish to include these in your measurements. For example, if you use Java, the Java garbage collector will run at various points to reclaim the memory space used by unneeded objects. You may want to exclude from your measurements any time spent garbage collecting. Another problem is that the timing commands provided by many programming languages do not report times to a sufficient level of precision. for most problems there can be many bottleneck test cases you have to find out CPU time of program for each test case and then take average of that to find out execution time.\"\nJohn:“Then what is best way to compare two Algorithms ?\"\nBob:“There is a notation called asymptotic notation to measure efficiency of Algorithm.\"\nJohn:“It sounds like complex. can you explain it in simple way ?\"\nBob:\" it’s not complex . in asymptotic notation we always talk about rate of growth of program.rate of growth means how does the execution time changes as the size of input grows. for example if you have to print a number from 1 to n then it will take linear time why ? because run time of your program is proportional to n . how do you know that ? suppose if n is 10 then your print statement will execute 10 times if i change n to 100 then print statement will execute 100 times. as n is grows 10 times your task of printing is also grows 10 times.\"\n**story over** now you'll have basic understanding how to compare two programs. now you would be thinking why we care about efficiency it is not sufficient my program is giving correct output ?. suppose if you want to buy some product on Amazon and amazon takes 10s or more each time whenever you click on some option. would you use it in 2018 ? yes you won't. now if you're thinking how to predict how much time a program will take to execute in general then skim through the following functions and their rate of growth with respect to input size 'n' a normal computer can execute 109 instruction per second. suppose we have two algorithm and you are going to run both for input size 1000 and one algorithm has time complexity of O(n) then how much second computer will take to give you result ? 1000/109 = 1 micro second but it is not exact value it would took few mili seconds in worst case. and other hand we take second algorithm for same input size with different time complexity lets take O(2n) then it will take 21000/109 = 10301/109  10290 seconds if we divide it by number of seconds in a year(3 * 107) which will still  10280 years which is more than 10269 times of age of universe , you don't want to write such algorithms for real world problem.then what is solution ? chose algorithm that fulfill your needs. to know which algorithm will fulfill your needs you should know how to measure complexity of algorithm. There are two types of complexity that we talk about for algorithms 1.Time Complexity 2.Space Complexity 1.Time Complexity: let’s talk about how to find Time complexity of a program . consider following code snippet.\n#include\tint main(){ int n; scanf(\"%d\",\u0026n); while(n0){ printf(\"%d\\n\",n); n--; } return 0; } what will be the output of this program? your answer would be it depends on \"n\". can we still predict how many times while loop will executed ?\nyes we can still find out three cases\n1.maximum how many times loop will be executed.(worst case)\n2.minimum how many times loop will be executed.(best case)\n3.average how many times loop will be executed.(average case)\n what will be the minimum number of times while loop will be executed ? 0 times .when n1.Big O ( for worst case) 2.Omega ( for best case)\n3.Theta ( for average case)\n\nsuppose You have bought a Macbook pro in 1499$ . and one of your friend asked you how much did it cost ? what would you say ? 1500$ right ? (unless you have a friend which would tell you i could have bought this for you for free . moreover he would have made you CEO of apple .)\nwhy did you say that ? because 1499$ was huge compare to 1$ you can neglect it. similarly most of the time we are neglecting some constants or less dominating terms in this analysis. for e.g You have a function f(x) = n3 + n + 1 is can be equal to n3 by multiplying some constants into it. it will be more clear when we move further. let's discuss about Asymptotic notations.\n1.Big O notation (upper bounding function):  we represent worst case complexity of an algorithm using this notation. suppose you have a function f(x) then what would be the upper bounding function of f(x)? upper bounding function mean the function which gives f(x) maximum rate of growth for large input .\nfor example f(x) = n3 + n + 1 for larger value of n , n3 would give more rate of growth to f(x) than n and 1 hence n3 is upper bounding function of f(x) let's denote upper bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values , c0\ne.g: f(x) = 2n + 4\nwhat would be g(x) ?\nin 2n and 4 , 2n have higher rate of growth hence g(x) = n\nwhat will be c? 2n+4n\nfor cn could never greater or equal to f(x), let’s take c=3\n2n+4=4 hence 2n+4 = O(n) after some value of n ,c*g(x) will be always = f(x)\nso any function which is asymptotically greater than g(x) will be also upper bounding function of f(x).e.g 2n+4 = O(n2) but most of the time we are interested in tightest upper bounding function which is O(n) \n2.Omega notation (lower bounding function): we represent best case complexity of an algorithm using this notation. suppose you have a function f(x) then the lower bounding function mean the function which gives the largest rate of growth which is less than or equal to the rate of growth of f(x) for example f(x) = n3 + n + 1 for larger value of n , n3 would give less than the of growth to f(x) hence n3 is upper bounding function of f(x) let’s denote lower bounding function with g(x) then mathematically\nwhere c can have infinte numbers of values\ne.g: f(x) = 2n + 4 what would be g(x) ?\nn have rate of growth less than f(x) hence g(x) = n\nwhat will be c? 2n+4=cn\ncn could never greater than f(x),take c=2\n2n+4=0 hence 2n+4 = Ω(n) \n3.theta notation (order function): We represent average complexity of an algorithm using this notation. This notation decides whether upper and lower bounds of a function is same. if upper and lower bounds of a function is same then theta would be also same. mathematically\nwhere c1=3 and c1,c20\ne.g: f(x) = 2n + 4\nf(x) = O(n)\nf(x) = Ω(n)\nf(x) = Θ(n)\n #include\tint main(){ { // block 1 n \t} { // block 2 n^2 \t} { // block 3 1 \t} return 0; } in the above code suppose block 1 has n cost block 2 has n2 cost and block 3 has 1 (constant) cost. then total cost is n2 +n+1 . but here n and 1 is very smaller than n2 . when n2 will be greater than n and 1 ? since we generally talk about large inputs to find complexity hence as we increase n1 , n2 will be always greater than 1 and n. now you would be thinking how to find cost ?. cost is nothing but how much times instructions get executed. let's understand this by an example.lets analyse each block one by one\n for(i=0;in;i++) // 1st block \t{ printf(\"hello world !\"); } in first block how many times for loop will be executed ? n times right ? hence cost of this block is n or time complexity is O(n) in worst case. what will be the best case time complexity ? when nfor(i=0;in;i++) // 2nd block  { for(j=0;jn;j++) { printf(\"hello world !\"); } } in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n2, time complexity O(n2) for worst case.what will be the best case time complexity ? when n2)/2 = n2/2 times so average time complexity would be Θ(n2) \nfor(i=0;in;i++) // 3rd block \t{ printf(\"hello world !\"); if(i==2){ break; } } for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) . \nfor(i=1;in;i=i*2) // 4th block  { printf(\"hello world !\"); } for 4th block how many times for loop get executed ? take few examples to convience yourself . value of i will be increasing from 1 till ik when will be 2k  n . take log base 2 both sides log2(2k)log2(n)\nk log2(n)\nso this loop will be executing around log2(n) times. time complexities would be O(log(n)), Ω(1) and Θ(log(n))\nwhat if i start at i=0 ? how many times this loop would be executed ? forever right ? if n0 \nfor(i=1;i10;i++) // 5th block \t{ printf(\"hello world !\"); } for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is k and value of constant is = 10k then constant would affect execution time. \nj=0; for(i=0;in;i++) // 6th block  { for(;jn;j++) { printf(\"hello world !\"); } } for 6th block how many times for loop get executed ? for i=0 inner loop will execute n times after that inner loop will not executed why ? because unlike 2nd block we are not initializing j for each i . so how may times loop will be executed ? 1*n ( first time i=0 inner loop will execute n times and outer loop will executed 1 times) + n-1( i=1 to n-1) times = 2n-1 now we will eliminate constants so it will become n , time complexities O(n),Ω(1) and Θ(n) \nvoid merge(int a, int b, int low,int mid, int high) { // some O(n) operation  } void mergesort(int a, int b, int low, int high) // T(n)  { int mid; if(lowhigh) { mid=(low+high)/2; // O(1)  mergesort(a,b,low,mid); // T(n/2)  mergesort(a,b,mid+1,high); // T(n/2)  merge(a,b,low,mid,high); // O(n)  } } For recursive function: for recursive function like above you need to calculate time complexity using back substitution algorithm. lets see how this works. suppose time complexity of this function is T(n)\nthen how can we write T(n)? T(n) = 2T(n/2) + cn —- (1) (neglected O(1) operation) T(n/2) = 2T((n/2)/2) + cn/2 T(n/2) = 2T(n/4) + cn/2 now substitute value of T(n/2) into equation (1) we will get T(n) = 2 * 2T(n/4) + 2* cn/2 + cn T(n) = 4T(n/4) + 2cn from above observation you would get following result\nT(n) = 2k*T(n/2k) + kcn when n=1 then T(n)=1 so, n/2k = 1 2k = n k = log2(n) on substituting value k in T(n) ,T(n) = 1 + log(n)*c*n\nso time complexity would be O(nlogn)\nwe can also calculate this using master’s theorem also but this is more generalized method.\n2.Space Complexity:\nif you have learned above concepts then you already know how to calculate sapce complexity . This article become long that’s why i wouldn’t discussed this. for 5 min read go to this link \n","wordCount":"2353","inLanguage":"en","datePublished":"2018-11-17T04:18:45Z","dateModified":"2018-11-17T04:18:45Z","author":{"@type":"Person","name":"Shubham"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://whoami-shubham.github.io/posts/how-to-compair-two-algorithms/"},"publisher":{"@type":"Organization","name":"shubham's Blog","logo":{"@type":"ImageObject","url":"https://whoami-shubham.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -142,21 +142,7 @@ There are two types of complexity that we talk about for algorithms
 <span class=conv>
 let&rsquo;s talk about how to find Time complexity of a program .
 consider following code snippet.</span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>	<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>	<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e></span>	<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
 	<span style=color:#66d9ef>int</span> n;
 	scanf(<span style=color:#e6db74>&#34;%d&#34;</span>,<span style=color:#f92672>&amp;</span>n);
@@ -166,9 +152,7 @@ consider following code snippet.</span></p>
 	}
 	 <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
 	}
-</code></pre></td></tr></table>
-</div>
-</div><span class=conv>
+</code></pre></div><span class=conv>
 what will be the output of this program? your answer would be it depends on "n".
 can we still predict how many times while loop will executed ?<br> yes we can still find out three cases<br><br>
 <span class=list-group>
@@ -234,26 +218,7 @@ f(x) = O(n)<br>
 f(x) = &#8486;(n)<br>
 f(x) = &#920;(n)<br>
 </span>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     
 	<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e></span>	 <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
 		{
@@ -268,46 +233,19 @@ f(x) = &#920;(n)<br>
 </span><span style=color:#75715e></span>	     }
 	 <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
 	}
-</code></pre></td></tr></table>
-</div>
-</div><span class=conv>
+</code></pre></div><span class=conv>
 in the above code suppose block 1 has n cost block 2 has n<sup>2</sup> cost and block 3 has 1 (constant) cost. then total cost is n<sup>2</sup> +n+1 . but here n and 1 is very smaller than n<sup>2</sup> . when n<sup>2</sup> will be greater than n and 1 ? since we generally talk about large inputs to find complexity hence as we increase n>1 , n<sup>2</sup> will be always greater than 1 and n. now you would be thinking how to find cost ?. cost is nothing but how much times instructions get executed. let's understand this by an example.lets analyse each block one by one<br>
 </span>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
 	  <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>//  1st block
 </span><span style=color:#75715e></span>		{
 		printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
 	    }
 
-</code></pre></td></tr></table>
-</div>
-</div><span class=conv>
+</code></pre></div><span class=conv>
 <span class=list-group-item>in first block how many times for loop will be executed ? n times right ? hence cost of this block is n or time complexity is O(n) in worst case. what will be the best case time complexity ? when n<=0 loop will execute 0 times hence best case time complexity will be &#8486;(1),what will be time complexity for average case ? in average case for loop will be executing (0+n)/2 = n/2 times so average time complexity would be &#920;(n)
 </span>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 2nd block
 </span><span style=color:#75715e></span>     {
           <span style=color:#66d9ef>for</span>(j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;j<span style=color:#f92672>&lt;</span>n;j<span style=color:#f92672>++</span>)
@@ -316,24 +254,9 @@ in the above code suppose block 1 has n cost block 2 has n<sup>2</sup> cost and 
            }
        }
 
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv">in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n<sup>2</sup>, time complexity O(n<sup>2</sup>) for worst case.what will be the best case time complexity ? when n&lt;=0 loop will execute 0 times hence best case time complexity will be Ω(1) , in average case for loop will be executing (0+n<sup>2</sup>)/2 = n<sup>2</sup>/2 times so average time complexity would be Θ(n<sup>2</sup>)
+</code></pre></div><p><span class="list-group-item conv">in 2nd block how many times outer for loop gets executed ? n times and for each outer loop iteration inner loop also get executed n times hence total cost would be n*n = n<sup>2</sup>, time complexity O(n<sup>2</sup>) for worst case.what will be the best case time complexity ? when n&lt;=0 loop will execute 0 times hence best case time complexity will be Ω(1) , in average case for loop will be executing (0+n<sup>2</sup>)/2 = n<sup>2</sup>/2 times so average time complexity would be Θ(n<sup>2</sup>)
 </span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>
 		 <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 3rd block
 </span><span style=color:#75715e></span>		{
 		    printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
@@ -342,27 +265,14 @@ in the above code suppose block 1 has n cost block 2 has n<sup>2</sup> cost and 
 		       }
 		 }
 
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv"> for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) .
+</code></pre></div><p><span class="list-group-item conv"> for 3rd block how many times for loop get executed ? maximum 3 times i=0 to i=2 right ? due to break statement loop will be broken when i reaches 2, time complexity O(1) .
 </span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>=</span>i<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>) <span style=color:#75715e>// 4th block
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>     <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>=</span>i<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>) <span style=color:#75715e>// 4th block
 </span><span style=color:#75715e></span>             {
                    printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
                  }    
 
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv"> for 4th block how many times for loop get executed ?
+</code></pre></div><p><span class="list-group-item conv"> for 4th block how many times for loop get executed ?
 take few examples to convience yourself . value of i will be increasing from 1 till i&lt;n.
 1 2 4 8 2<sup>k</sup> when will be 2<sup>k</sup> > n . take log base 2 both sides
 log2(2<sup>k</sup>)>log2(n)<br>
@@ -370,39 +280,14 @@ k >log2(n)<br>
 so this loop will be executing around log2(n) times. time complexities would be O(log(n)), Ω(1) and
 Θ(log(n))<br> what if i start at i=0 ? how many times this loop would be executed ? forever right ? if n>0
 </span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>		  
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>		  
      <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>10</span>;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 5th block
 </span><span style=color:#75715e></span>	{
         printf(<span style=color:#e6db74>&#34;hello world !&#34;</span>);
     }   
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv"> for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is &lt;= 10<sup>k</sup> and value of constant is >= 10<sup>k</sup> then constant would affect execution time.
+</code></pre></div><p><span class="list-group-item conv"> for 5th block how many times for loop get executed ? 10 times because here no matter what is input size it will always run 10 times. so this is constant time operation time complexity O(1).but if our input size is &lt;= 10<sup>k</sup> and value of constant is >= 10<sup>k</sup> then constant would affect execution time.
 </span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>         
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>         
    j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;
    <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>n;i<span style=color:#f92672>++</span>) <span style=color:#75715e>// 6th block
 </span><span style=color:#75715e></span>   {
@@ -412,38 +297,12 @@ so this loop will be executing around log2(n) times. time complexities would be 
        }
    }
    
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv"> for 6th block how many times for loop get executed ?
+</code></pre></div><p><span class="list-group-item conv"> for 6th block how many times for loop get executed ?
 for i=0 inner loop will execute n times after that inner loop will not executed why ? because unlike 2nd block we are not initializing j for each i . so how may times loop will be executed ? 1*n ( first time i=0 inner loop will execute n times and outer loop will executed 1 times) + n-1( i=1 to n-1) times = 2n-1 now we will eliminate constants so it will become n ,
 time complexities O(n),Ω(1) and
 Θ(n)
 </span></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>  <span style=color:#66d9ef>void</span>  <span style=color:#a6e22e>merge</span>(<span style=color:#66d9ef>int</span> a, <span style=color:#66d9ef>int</span> b, <span style=color:#66d9ef>int</span> low,<span style=color:#66d9ef>int</span> mid, <span style=color:#66d9ef>int</span> high)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>  <span style=color:#66d9ef>void</span>  <span style=color:#a6e22e>merge</span>(<span style=color:#66d9ef>int</span> a, <span style=color:#66d9ef>int</span> b, <span style=color:#66d9ef>int</span> low,<span style=color:#66d9ef>int</span> mid, <span style=color:#66d9ef>int</span> high)
   {
         <span style=color:#75715e>// some O(n) operation
 </span><span style=color:#75715e></span> }  
@@ -463,9 +322,7 @@ time complexities O(n),Ω(1) and
 
        }
         
-</code></pre></td></tr></table>
-</div>
-</div><p><span class="list-group-item conv"> <span style=color:#db4437>For recursive function:</span>
+</code></pre></div><p><span class="list-group-item conv"> <span style=color:#db4437>For recursive function:</span>
 for recursive function like above you need to calculate time complexity using back substitution algorithm. lets see how this works.
 suppose time complexity of this function is T(n)<br>
 then how can we write T(n)? <br>

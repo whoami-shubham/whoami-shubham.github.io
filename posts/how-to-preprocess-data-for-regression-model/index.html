@@ -43,7 +43,7 @@ suppose you have data something like this
 suppose you have data something like this
  if you look closely into this dataset then you would find some &ldquo;nan&rdquo; values into age and salary column.what the meaning of nan ?">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://whoami-shubham.github.io/posts/"},{"@type":"ListItem","position":2,"name":"how to preprocess data for regression model","item":"https://whoami-shubham.github.io/posts/how-to-preprocess-data-for-regression-model/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"how to preprocess data for regression model","name":"how to preprocess data for regression model","description":"Data Cleaning If You do not clean the data before training or testing Your Model then if your data is not good enough to apply machine learning algorithms then you would get trivial results like famous saying \u0026ldquo;Garbage In, Garbage Out.\u0026rdquo;\nsuppose you have data something like this\n if you look closely into this dataset then you would find some \u0026ldquo;nan\u0026rdquo; values into age and salary column.what the meaning of nan ?","keywords":["data-preprocessing"],"articleBody":"Data Cleaning If You do not clean the data before training or testing Your Model then if your data is not good enough to apply machine learning algorithms then you would get trivial results like famous saying “Garbage In, Garbage Out.”\nsuppose you have data something like this\n if you look closely into this dataset then you would find some “nan” values into age and salary column.what the meaning of nan ? nan means absense of value.You have two options either you could fill some data into this ‘nan’ cell or you could remove that row. if you want to fill data into that cell then what would be that data ? we generally fill this data with mean of that columns value\n1 2 3 4 5 6 7 8 9  import numpy as np import pandas as pd data = pd.read_csv('Data.csv') # load data X = data.iloc[:,0:3] # take all rows and col [0,3-1] Y = data.iloc[:,3] # take 4th col  from sklearn.preprocessing import Imputer imputer = Imputer(missing_values=np.nan,strategy=\"mean\",axis=0) # replace missing values with mean X[:,1:3] = imputer.fit_transform(X[:,1:3]) # since only 2nd and 4th column contains nan    after executing above code X would look like this   if You know about gradient descent then you probably woundering how you could fit this data because in our cost function we do not use any string values we only use numbers. since our algorithm can understand only numbers so we should change the labels into numbers using LabelEncoder. These labeled feature is also called as categorical feature. LabelEncoder takes every unique label and give that lable to one value for example if we have three labels A,B,C then LabelEncoder would represent A,B,C by 1,2,3 respectively.\n1 2 3 4 5  from sklearn.preprocessing import LabelEncoder labelencoder = LabelEncoder() X[:,0] = labelencoder.fit_transform(X[:,0]) Y = labelencoder.fit_transform(Y)    now you should come up with this question how did you assigned arbitrary values to labels ? wouldn't our model be biased towards minimum or maximum valued label? Yes it would be biased that's why we will have to do one more step.  we will use one-hot encoding to resolve above problem. If we have 'n' labels then we take n dimensional vector to represent each label and for each label one cell is dedicated. and if we have to represent a label then only the cell which is dedicated for this label will have value 1 and rest cells values will be zero. for example if we have three levels A,B,C then we would represent A,B,C using 3 dimensional vector suppose 1st,2nd and 3rd cells are dedicated for A,B and C respectively.then  A = [1,0,0]  B = [0,1,0]  C = [0,0,1]  now X would look like this   let's look at the code  1 2 3 4  from sklearn.preprocessing import OneHotEncoder onehotencoder = OneHotEncoder(categorical_features=[0]) # select categorical features columns X = onehotencoder.fit_transform(X).toarray()    Now one last step we would do for reduce biasing. what if one feature value is much larger than other features so that our model is biased towards that feature ? to resolve this biasing and Converge Gradient Descent fast we do feature scaling . In feature scaling we bring all features into same range using some standard methods. for example if we use min-max scaling then use following formula   first we find maximum and minimum element in a column and we call it ‘max(x)’ and ‘min(x)’ for that column and for each element ‘x’ we iterate through whole column using above formula. we will use sklearn’s StandardScaler to implement this . there are various methods of feature scaling you could use whatever method gives best result for your problem.\n1 2 3 4  from sklearn.preprocessing import StandardScaler standardscaler = StandardScaler() X = standardscaler.fit_transform(x)   Finally X would look like this   Look at the values of X all features are almost in the same range.  \n","wordCount":"637","inLanguage":"en","datePublished":"2019-02-25T14:20:56Z","dateModified":"2019-02-25T14:20:56Z","author":{"@type":"Person","name":"Shubham"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://whoami-shubham.github.io/posts/how-to-preprocess-data-for-regression-model/"},"publisher":{"@type":"Organization","name":"shubham's Blog","logo":{"@type":"ImageObject","url":"https://whoami-shubham.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"how to preprocess data for regression model","name":"how to preprocess data for regression model","description":"Data Cleaning If You do not clean the data before training or testing Your Model then if your data is not good enough to apply machine learning algorithms then you would get trivial results like famous saying \u0026ldquo;Garbage In, Garbage Out.\u0026rdquo;\nsuppose you have data something like this\n if you look closely into this dataset then you would find some \u0026ldquo;nan\u0026rdquo; values into age and salary column.what the meaning of nan ?","keywords":["data-preprocessing"],"articleBody":"Data Cleaning If You do not clean the data before training or testing Your Model then if your data is not good enough to apply machine learning algorithms then you would get trivial results like famous saying “Garbage In, Garbage Out.”\nsuppose you have data something like this\n if you look closely into this dataset then you would find some “nan” values into age and salary column.what the meaning of nan ? nan means absense of value.You have two options either you could fill some data into this ‘nan’ cell or you could remove that row. if you want to fill data into that cell then what would be that data ? we generally fill this data with mean of that columns value\nimport numpy as np import pandas as pd data = pd.read_csv('Data.csv') # load data X = data.iloc[:,0:3] # take all rows and col [0,3-1] Y = data.iloc[:,3] # take 4th col  from sklearn.preprocessing import Imputer imputer = Imputer(missing_values=np.nan,strategy=\"mean\",axis=0) # replace missing values with mean X[:,1:3] = imputer.fit_transform(X[:,1:3]) # since only 2nd and 4th column contains nan  after executing above code X would look like this   if You know about gradient descent then you probably woundering how you could fit this data because in our cost function we do not use any string values we only use numbers. since our algorithm can understand only numbers so we should change the labels into numbers using LabelEncoder. These labeled feature is also called as categorical feature. LabelEncoder takes every unique label and give that lable to one value for example if we have three labels A,B,C then LabelEncoder would represent A,B,C by 1,2,3 respectively.\nfrom sklearn.preprocessing import LabelEncoder labelencoder = LabelEncoder() X[:,0] = labelencoder.fit_transform(X[:,0]) Y = labelencoder.fit_transform(Y)  now you should come up with this question how did you assigned arbitrary values to labels ? wouldn't our model be biased towards minimum or maximum valued label? Yes it would be biased that's why we will have to do one more step.  we will use one-hot encoding to resolve above problem. If we have 'n' labels then we take n dimensional vector to represent each label and for each label one cell is dedicated. and if we have to represent a label then only the cell which is dedicated for this label will have value 1 and rest cells values will be zero. for example if we have three levels A,B,C then we would represent A,B,C using 3 dimensional vector suppose 1st,2nd and 3rd cells are dedicated for A,B and C respectively.then  A = [1,0,0]  B = [0,1,0]  C = [0,0,1]  now X would look like this   let's look at the code  from sklearn.preprocessing import OneHotEncoder onehotencoder = OneHotEncoder(categorical_features=[0]) # select categorical features columns X = onehotencoder.fit_transform(X).toarray()  Now one last step we would do for reduce biasing. what if one feature value is much larger than other features so that our model is biased towards that feature ? to resolve this biasing and Converge Gradient Descent fast we do feature scaling . In feature scaling we bring all features into same range using some standard methods. for example if we use min-max scaling then use following formula   first we find maximum and minimum element in a column and we call it ‘max(x)’ and ‘min(x)’ for that column and for each element ‘x’ we iterate through whole column using above formula. we will use sklearn’s StandardScaler to implement this . there are various methods of feature scaling you could use whatever method gives best result for your problem.\nfrom sklearn.preprocessing import StandardScaler standardscaler = StandardScaler() X = standardscaler.fit_transform(x) Finally X would look like this   Look at the values of X all features are almost in the same range.  \n","wordCount":"615","inLanguage":"en","datePublished":"2019-02-25T14:20:56Z","dateModified":"2019-02-25T14:20:56Z","author":{"@type":"Person","name":"Shubham"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://whoami-shubham.github.io/posts/how-to-preprocess-data-for-regression-model/"},"publisher":{"@type":"Organization","name":"shubham's Blog","logo":{"@type":"ImageObject","url":"https://whoami-shubham.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -97,20 +97,7 @@ how to preprocess data for regression model
 if you look closely into this dataset then you would find some &ldquo;nan&rdquo; values into age and salary column.what the meaning of nan ?
 nan means absense of value.You have two options either you could fill some data into this &lsquo;nan&rsquo; cell or you could remove that row.
 if you want to fill data into that cell then what would be that data ? we generally fill this data with mean of that columns value<br></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np  
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np  
     <span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd
     data <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(<span style=color:#e6db74>&#39;Data.csv&#39;</span>)             <span style=color:#75715e># load data</span>
     X    <span style=color:#f92672>=</span> data<span style=color:#f92672>.</span>iloc[:,<span style=color:#ae81ff>0</span>:<span style=color:#ae81ff>3</span>]                    <span style=color:#75715e># take all rows and col [0,3-1]</span>
@@ -119,32 +106,19 @@ if you want to fill data into that cell then what would be that data ? we genera
     imputer <span style=color:#f92672>=</span> Imputer(missing_values<span style=color:#f92672>=</span>np<span style=color:#f92672>.</span>nan,strategy<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;mean&#34;</span>,axis<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>) <span style=color:#75715e># replace missing values with mean</span>
     X[:,<span style=color:#ae81ff>1</span>:<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> imputer<span style=color:#f92672>.</span>fit_transform(X[:,<span style=color:#ae81ff>1</span>:<span style=color:#ae81ff>3</span>]) <span style=color:#75715e># since only 2nd and 4th column contains nan</span>
     
-</code></pre></td></tr></table>
-</div>
-</div><br>
+</code></pre></div><br>
 after executing above code X would look like this <br><br>
 <p><img loading=lazy src=/images/data_m.png alt>
 </p>
 <p><br><br>
 if You know about gradient descent then you probably woundering how you could fit this data because in our cost function we do not use any string values we only use numbers.
 since our algorithm can understand only numbers so we should change the labels into numbers using LabelEncoder. These labeled feature is also called as categorical feature. <br>LabelEncoder takes every unique label and give that lable to one value for example if we have three labels A,B,C then LabelEncoder would represent A,B,C by 1,2,3 respectively.<br></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> LabelEncoder
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> LabelEncoder
     labelencoder <span style=color:#f92672>=</span> LabelEncoder()
     X[:,<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> labelencoder<span style=color:#f92672>.</span>fit_transform(X[:,<span style=color:#ae81ff>0</span>])
     Y <span style=color:#f92672>=</span> labelencoder<span style=color:#f92672>.</span>fit_transform(Y)
     
-</code></pre></td></tr></table>
-</div>
-</div><br>
+</code></pre></div><br>
 now you should come up with this question how did you assigned arbitrary values to labels ? wouldn't our model be biased towards minimum or maximum valued label?
 Yes it would be biased that's why we will have to do one more step. <br>
 we will use one-hot encoding to resolve above problem. If we have 'n' labels then we take n dimensional vector to represent each label and for each label one cell is dedicated. and if we have to represent a label then only the cell which is dedicated for this label will have value 1 and rest cells values will be zero.
@@ -157,41 +131,21 @@ now X would look like this <br>
 </p>
 <br>
 let's look at the code <br>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> OneHotEncoder
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> OneHotEncoder
     onehotencoder <span style=color:#f92672>=</span> OneHotEncoder(categorical_features<span style=color:#f92672>=</span>[<span style=color:#ae81ff>0</span>]) <span style=color:#75715e># select categorical features columns</span>
     X <span style=color:#f92672>=</span> onehotencoder<span style=color:#f92672>.</span>fit_transform(X)<span style=color:#f92672>.</span>toarray()     
 
-</code></pre></td></tr></table>
-</div>
-</div><br>
+</code></pre></div><br>
 <p>Now one last step we would do for reduce biasing. what if one feature value is much larger than other features so that our model is biased towards that feature ? to resolve this biasing and Converge Gradient Descent fast we do feature scaling . In feature scaling we bring all features into same range using some standard methods. for example if we use min-max scaling then use following formula <br>
 <img loading=lazy src=/images/formula.png alt>
 <br>
 first we find maximum and minimum element in a column and we call it &lsquo;max(x)&rsquo; and &lsquo;min(x)&rsquo; for that column and for each element &lsquo;x&rsquo; we iterate through whole column using above formula.<br>
 we will use sklearn&rsquo;s StandardScaler to implement this . there are various methods of feature scaling you could use whatever method gives best result for your problem.<br></p>
-<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> StandardScaler
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py>    <span style=color:#f92672>from</span> sklearn.preprocessing <span style=color:#f92672>import</span> StandardScaler
     standardscaler <span style=color:#f92672>=</span> StandardScaler()
     X <span style=color:#f92672>=</span> standardscaler<span style=color:#f92672>.</span>fit_transform(x)
 
-</code></pre></td></tr></table>
-</div>
-</div><p>Finally X would look like this <br>
+</code></pre></div><p>Finally X would look like this <br>
 <img loading=lazy src=/images/nor_x.png alt>
 <br>
 Look at the values of X all features are almost in the same range.<br><br>
