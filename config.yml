@@ -75,7 +75,7 @@ params:
 
   socialIcons:
     - name: twitter
-      url: "https://twitter.com/whoami-shubham"
+      url: "https://twitter.com/whoami_shubham"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/7784354/shubham-jha"
     - name: github
