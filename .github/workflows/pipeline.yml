@@ -33,7 +33,7 @@ jobs:
       - name: Log2
         run: echo " ${{ github.ref }} "
       - name: Copy google file
-        run: cp googlecf58355e499e9d1e.html ./public
+        run: cp -t ./public googlecf58355e499e9d1e.html favicon.ico favicon-16x16.png favicon-32x32.png
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
