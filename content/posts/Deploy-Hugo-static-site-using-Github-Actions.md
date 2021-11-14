@@ -12,7 +12,7 @@ tags: [CICD, Github-Pages, Github-Actions, Hugo]
   .green{
     color:#1A7F37;
   }
-  .blue{
+  .blue,.blue>a{
    color:#0969DA;
    }
   
