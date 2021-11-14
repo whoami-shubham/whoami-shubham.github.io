@@ -2,7 +2,7 @@
 layout: post
 title: Deploy Hugo static site using Github Actions on Github pages
 summary: "If you already have static site built using Hugo, 
-and whenever you need to updated or add new post on website you have to build the site locally and push the changes to github. 
+and whenever you need to update or add new post on website you have to build the site locally and push the changes to github. 
 then you might consider using Github Actions. It is free for public repository use"
 date:   2021-11-14
 tags: [CICD, Github-Pages, Github-Actions, Hugo]
@@ -20,7 +20,7 @@ tags: [CICD, Github-Pages, Github-Actions, Hugo]
 
 
 If you already have static site built using Hugo, 
-and whenever you need to updated or add new post on website you have to build the site locally and push the changes to github. 
+and whenever you need to update or add new post on website you have to build the site locally and push the changes to github. 
 then you might consider using Github Actions. It is free for public repository use.
 
 I have Two branches 
