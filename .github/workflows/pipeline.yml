@@ -13,7 +13,7 @@ jobs:
 
       - name: Clone theme
         # If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule add git@github.com:adityatelange/hugo-PaperMod.git themes/PaperMod
+        run: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
         
       - name: Update theme
         run: git submodule update --init --recursive
